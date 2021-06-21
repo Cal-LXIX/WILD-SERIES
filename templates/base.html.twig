@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-    <tête>
+    <head>
         <meta  charset = " UTF-8 ">
         <title >{% block  title %}Wild-series !{% endblock %}</title>
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -12,21 +12,21 @@
         <meta name="theme-color" content="#ffffff">
         {# Exécutez `composer require symfony/webpack-encore-bundle`
            et décommentez les assistants Encore suivants pour commencer à utiliser Symfony UX #}
-        {% blocs de  feuilles de style %}
-            {{ encore_entry_link_tags( ' app ' ) }}
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
             
              <link  rel = " icon "  type = " image/png "  href = " {{ asset( ' build/favicon.ico ' )}} " />
              
-        {% bloc final %}
+        {% endblock %}
 
-        {% bloquer les  javascripts %}
-            {{ encore_entry_script_tags( ' app ' ) }}
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
           
-             {% bloc final %}
-    </tête>
-    <corps>
-    <header> {% include  " _navbar.html.twig " %}</header>
+             {% endblock %}
+    </head>
+    <body>
+    <header> {% include "_navbar.html.twig" %}</header>
     
-        {% corps du bloc  %} {% bloc final %}
-    </corps>
+        {% block body  %}{% endblock %}
+    </body>
 </html>
